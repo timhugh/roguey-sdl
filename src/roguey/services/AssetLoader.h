@@ -5,10 +5,20 @@
 #ifndef ROGUEY_V4_ASSETLOADER_H
 #define ROGUEY_V4_ASSETLOADER_H
 
+#include <SDL.h>
+#include <string>
 
-class AssetLoader {
-
-};
+namespace roguey::services {
+    class AssetLoader {
+    public:
+        AssetLoader(SDL_Renderer* renderer, std::string baseAssetPath);
+        ~AssetLoader();
+        SDL_Texture *loadTexture(std::string path);
+    private:
+        SDL_Renderer *renderer;
+        std::string baseAssetPath;
+    };
+}
 
 
 #endif //ROGUEY_V4_ASSETLOADER_H

@@ -6,6 +6,7 @@
 #define ROGUEY_V4_RENDERSYSTEM_H
 
 #include "WindowSystem.h"
+#include "../services/AssetLoader.h"
 
 namespace roguey {
     class RenderSystem {
@@ -14,6 +15,7 @@ namespace roguey {
         ~RenderSystem();
         void render();
     private:
+        services::AssetLoader *assetLoader;
         SDL_Renderer *renderer;
     };
 }
