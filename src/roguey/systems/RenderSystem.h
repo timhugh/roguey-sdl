@@ -20,5 +20,4 @@ namespace roguey {
     };
 }
 
-
 #endif //ROGUEY_V4_RENDERSYSTEM_H
