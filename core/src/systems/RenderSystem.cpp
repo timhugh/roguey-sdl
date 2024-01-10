@@ -1,8 +1,4 @@
-//
-// Created by Tim Heuett on 1/9/24.
-//
-
-#include "RenderSystem.h"
+#include "core/systems/RenderSystem.h"
 
 #include <SDL_image.h>
 #include <string>

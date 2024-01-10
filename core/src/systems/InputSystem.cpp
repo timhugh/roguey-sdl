@@ -1,9 +1,5 @@
-//
-// Created by Tim Heuett on 1/9/24.
-//
-
 #include <SDL.h>
-#include "InputSystem.h"
+#include "core/systems/InputSystem.h"
 
 void InputSystem::update() {
     SDL_Event event;

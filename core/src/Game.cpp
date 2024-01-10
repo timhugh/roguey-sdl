@@ -1,12 +1,8 @@
-//
-// Created by Tim Heuett on 1/9/24.
-//
-
-#include "Game.h"
-#include "systems/WindowSystem.h"
-#include "systems/RenderSystem.h"
-#include "systems/InputSystem.h"
-#include "systems/FrameTimerSystem.h"
+#include "core/Game.h"
+#include "core/systems/WindowSystem.h"
+#include "core/systems/RenderSystem.h"
+#include "core/systems/InputSystem.h"
+#include "core/systems/FrameTimerSystem.h"
 #include <iostream>
 
 namespace roguey {
@@ -34,4 +30,4 @@ namespace roguey {
         delete renderer;
         delete input;
     }
-} // roguey
+}

@@ -1,9 +1,4 @@
-//
-// Created by Tim Heuett on 1/10/24.
-//
-
-#ifndef ROGUEY_V4_ASSETLOADER_H
-#define ROGUEY_V4_ASSETLOADER_H
+#pragma once
 
 #include <SDL.h>
 #include <string>
@@ -22,6 +17,3 @@ namespace roguey::services {
         std::map<std::string, SDL_Texture*> textureCache;
     };
 }
-
-
-#endif //ROGUEY_V4_ASSETLOADER_H

@@ -1,9 +1,4 @@
-//
-// Created by Tim Heuett on 1/9/24.
-//
-
-#ifndef ROGUEY_V4_GAME_H
-#define ROGUEY_V4_GAME_H
+#pragma once
 
 #include "systems/WindowSystem.h"
 #include "systems/InputSystem.h"
@@ -24,6 +19,4 @@ namespace roguey {
         InputSystem* input;
     };
 
-} // roguey
-
-#endif //ROGUEY_V4_GAME_H
+}

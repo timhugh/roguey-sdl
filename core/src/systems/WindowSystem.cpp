@@ -1,8 +1,4 @@
-//
-// Created by Tim Heuett on 1/9/24.
-//
-
-#include "WindowSystem.h"
+#include "core/systems/WindowSystem.h"
 #include <iostream>
 
 roguey::WindowSystem::WindowSystem(int screenWidth, int screenHeight, const char *title) {

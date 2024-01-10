@@ -1,9 +1,5 @@
-//
-// Created by Tim Heuett on 1/10/24.
-//
-
 #include <SDL_image.h>
-#include "AssetLoader.h"
+#include "core/services/AssetLoader.h"
 
 roguey::services::AssetLoader::AssetLoader(SDL_Renderer *renderer, std::string baseAssetPath) {
     this->renderer = renderer;

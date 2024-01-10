@@ -1,9 +1,5 @@
-//
-// Created by Tim Heuett on 1/9/24.
-//
-
 #include <SDL.h>
-#include "FrameTimerSystem.h"
+#include "core/systems/FrameTimerSystem.h"
 
 FrameTimerSystem::FrameTimerSystem(int fps) {
     _frameDelay = 1000 / fps;

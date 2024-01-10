@@ -1,10 +1,4 @@
-//
-// Created by Tim Heuett on 1/9/24.
-//
-
-#ifndef ROGUEY_V4_WINDOWSYSTEM_H
-#define ROGUEY_V4_WINDOWSYSTEM_H
-
+#pragma once
 
 #include <SDL.h>
 
@@ -19,6 +13,3 @@ namespace roguey {
         SDL_Window *window;
     };
 }
-
-
-#endif //ROGUEY_V4_WINDOWSYSTEM_H

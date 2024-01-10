@@ -1,7 +1,6 @@
-
 #include <exception>
 #include <iostream>
-#include "roguey/Game.h"
+#include "core/Game.h"
 
 int main() {
 
