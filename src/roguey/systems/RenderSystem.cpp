@@ -21,7 +21,7 @@ namespace roguey {
         }
 
         // TODO: temp
-        texture = IMG_LoadTexture(renderer, "assets/graphics/sprites.png");
+        texture = IMG_LoadTexture(renderer, "../assets/graphics/sprites.png");
         if (texture == nullptr) {
             throw std::runtime_error(
                     "SDL_image could not create texture! SDL_image Error: " +
