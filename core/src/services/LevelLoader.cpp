@@ -7,9 +7,9 @@ using roguey::services::LevelLoader;
 
 LevelLoader::LevelLoader(const std::string &baseAssetPath) : baseAssetPath(baseAssetPath) {}
 
-LevelLoader::Level LevelLoader::load(const std::string &path) const {
+std::unique_ptr<LevelLoader::Level> LevelLoader::load(const std::string &path) const {
     const auto fullPath = baseAssetPath + path;
     std::ifstream f(fullPath);
     json data = json::parse(f);
-    return data.template get<Level>();
+    return std::make_unique<Level>(data.get<Level>());
 }

@@ -8,19 +8,12 @@ namespace roguey {
 
     RenderSystem::RenderSystem(WindowSystem *windowSystem) {
         renderer = windowSystem->createRenderer();
-        textureLoader = new services::TextureLoader(renderer, "../assets/");
-    }
-
-    RenderSystem::~RenderSystem() {
-        delete textureLoader;
-        SDL_DestroyRenderer(renderer);
+        textureLoader = std::make_unique<services::TextureLoader>(renderer, "../assets/");
     }
 
     void RenderSystem::render() const {
-        SDL_RenderClear(renderer);
-
         // TODO: call other renderers
 
-        SDL_RenderPresent(renderer);
+        SDL_RenderPresent(renderer.get());
     }
 }

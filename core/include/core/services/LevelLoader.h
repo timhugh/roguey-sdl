@@ -38,7 +38,7 @@ namespace roguey::services {
 
         explicit LevelLoader(const std::string &baseAssetPath);
 
-        [[nodiscard]] Level load(const std::string &path) const;
+        [[nodiscard]] std::unique_ptr<Level> load(const std::string &path) const;
 
     private:
         const std::string baseAssetPath;

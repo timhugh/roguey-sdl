@@ -33,23 +33,22 @@ namespace roguey::services {
             std::vector<Tile> tiles;
 
         public:
-            std::string getSpritesheet() const;
+            [[nodiscard]] std::string getSpritesheet() const;
 
-            int getTilesize() const;
+            [[nodiscard]] int getTilesize() const;
 
-            std::vector<Tile> getTiles() const;
+            [[nodiscard]] std::vector<Tile> getTiles() const;
 
-            std::optional<Tile> getTile(const int id) const;
+            [[nodiscard]] std::optional<Tile> getTile(int id) const;
 
-            std::optional<Tile> getTile(const std::string &name) const;
+            [[nodiscard]] std::optional<Tile> getTile(const std::string &name) const;
 
             NLOHMANN_DEFINE_TYPE_INTRUSIVE(Tileset, spritesheet, tilesize, tiles)
         };
 
+        explicit TilesetLoader(const std::string &baseAssetPath);
 
-        explicit TilesetLoader(std::string baseAssetPath);
-
-        [[nodiscard]] Tileset load(std::string path) const;
+        [[nodiscard]] std::unique_ptr<Tileset> load(const std::string &path) const;
 
     private:
         const std::string baseAssetPath;

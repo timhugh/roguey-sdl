@@ -17,8 +17,11 @@ roguey::WindowSystem::WindowSystem(const int screenWidth, const int screenHeight
     }
 }
 
-SDL_Renderer *roguey::WindowSystem::createRenderer() const {
-    return SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+std::shared_ptr<SDL_Renderer> roguey::WindowSystem::createRenderer() const {
+    return {
+            SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED),
+            SDL_DestroyRenderer
+    };
 }
 
 roguey::WindowSystem::~WindowSystem() {

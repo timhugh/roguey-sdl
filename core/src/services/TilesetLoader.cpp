@@ -7,13 +7,13 @@
 using json = nlohmann::json;
 using roguey::services::TilesetLoader;
 
-TilesetLoader::TilesetLoader(const std::string baseAssetPath) : baseAssetPath(baseAssetPath) {}
+TilesetLoader::TilesetLoader(const std::string &baseAssetPath) : baseAssetPath(baseAssetPath) {}
 
-TilesetLoader::Tileset roguey::services::TilesetLoader::load(const std::string path) const {
+std::unique_ptr<TilesetLoader::Tileset> roguey::services::TilesetLoader::load(const std::string &path) const {
     const auto fullPath = baseAssetPath + path;
     std::ifstream f(fullPath);
     json data = json::parse(f);
-    return data.template get<Tileset>();
+    return std::make_unique<TilesetLoader::Tileset>(data.template get<Tileset>());
 }
 
 std::string TilesetLoader::Tileset::getSpritesheet() const {

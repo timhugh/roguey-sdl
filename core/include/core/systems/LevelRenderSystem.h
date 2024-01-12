@@ -1,17 +1,18 @@
 #pragma once
 
 #include <SDL.h>
+#include <memory>
 
 namespace roguey::services {
     class LevelRenderSystem {
     public:
-        LevelRenderSystem(SDL_Renderer *renderer);
+        explicit LevelRenderSystem(const std::shared_ptr<SDL_Renderer> &renderer);
 
         ~LevelRenderSystem();
 
         void render() const;
 
     private:
-        SDL_Renderer *renderer;
+        const std::shared_ptr<SDL_Renderer> renderer;
     };
 }

@@ -2,6 +2,7 @@
 
 #include <SDL.h>
 #include <string>
+#include <memory>
 
 namespace roguey {
     class WindowSystem {
@@ -10,7 +11,7 @@ namespace roguey {
 
         ~WindowSystem();
 
-        [[nodiscard]] SDL_Renderer *createRenderer() const;
+        [[nodiscard]] std::shared_ptr<SDL_Renderer> createRenderer() const;
 
     private:
         SDL_Window *window;

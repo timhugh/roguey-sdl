@@ -8,12 +8,10 @@ namespace roguey {
     public:
         explicit RenderSystem(WindowSystem *windowSystem);
 
-        ~RenderSystem();
-
         void render() const;
 
     private:
-        services::TextureLoader *textureLoader;
-        SDL_Renderer *renderer;
+        std::unique_ptr<services::TextureLoader> textureLoader;
+        std::shared_ptr<SDL_Renderer> renderer;
     };
 }

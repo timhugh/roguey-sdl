@@ -15,12 +15,12 @@ TEST_CASE("test loads tileset") {
     };
 
     auto actualTileset = loader.load("test-tileset.json");
-    REQUIRE(actualTileset.getSpritesheet() == "test-tileset.png");
-    REQUIRE(actualTileset.getTilesize() == 8);
+    REQUIRE(actualTileset->getSpritesheet() == "test-tileset.png");
+    REQUIRE(actualTileset->getTilesize() == 8);
 
-    REQUIRE_THAT(actualTileset.getTiles(), Catch::Matchers::UnorderedEquals(expectedTiles));
+    REQUIRE_THAT(actualTileset->getTiles(), Catch::Matchers::UnorderedEquals(expectedTiles));
 
     auto expectedTile = expectedTiles.at(2);
-    REQUIRE(actualTileset.getTile(expectedTile.id) == expectedTile);
-    REQUIRE(actualTileset.getTile(expectedTile.name) == expectedTile);
+    REQUIRE(actualTileset->getTile(expectedTile.id) == expectedTile);
+    REQUIRE(actualTileset->getTile(expectedTile.name) == expectedTile);
 }
