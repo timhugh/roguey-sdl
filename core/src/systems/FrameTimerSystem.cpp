@@ -1,18 +1,16 @@
 #include <SDL.h>
 #include "core/systems/FrameTimerSystem.h"
 
-FrameTimerSystem::FrameTimerSystem(int fps) {
-    _frameDelay = 1000 / fps;
-}
+FrameTimerSystem::FrameTimerSystem(const int fps) : frameDelay(1000 / fps) {}
 
 void FrameTimerSystem::startFrame() {
-    _frameStart = SDL_GetTicks();
+    frameStart = SDL_GetTicks();
 }
 
 void FrameTimerSystem::endFrame() {
-    _frameTime = SDL_GetTicks() - _frameStart;
+    frameTime = SDL_GetTicks() - frameStart;
 
-    if (_frameDelay > _frameTime) {
-        SDL_Delay(_frameDelay - _frameTime);
+    if (frameDelay > frameTime) {
+        SDL_Delay(frameDelay - frameTime);
     }
 }

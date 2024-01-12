@@ -7,17 +7,17 @@
 namespace roguey::services {
     class TextureLoader {
     public:
-        TextureLoader(SDL_Renderer *renderer, std::string baseAssetPath);
+        TextureLoader(SDL_Renderer *renderer, const std::string &baseAssetPath);
 
         ~TextureLoader();
 
-        SDL_Texture *load(std::string path);
+        SDL_Texture *load(const std::string &path);
 
     private:
-        SDL_Texture *loadFromFile(std::string path);
+        SDL_Texture *loadFromFile(const std::string &path) const;
 
         SDL_Renderer *renderer;
-        std::string baseAssetPath;
-        std::map<std::string, SDL_Texture *> textureCache;
+        const std::string baseAssetPath;
+        std::map<const std::string, SDL_Texture *> textureCache;
     };
 }

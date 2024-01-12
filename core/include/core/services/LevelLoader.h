@@ -36,12 +36,11 @@ namespace roguey::services {
             NLOHMANN_DEFINE_TYPE_INTRUSIVE(Level, name, width, height, baseColorHex, baseTiles, entities);
         };
 
+        explicit LevelLoader(const std::string &baseAssetPath);
 
-        explicit LevelLoader(std::string baseAssetPath);
-
-        Level load(std::string path) const;
+        [[nodiscard]] Level load(const std::string &path) const;
 
     private:
-        std::string baseAssetPath;
+        const std::string baseAssetPath;
     };
 }

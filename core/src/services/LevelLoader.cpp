@@ -5,15 +5,11 @@
 using json = nlohmann::json;
 using roguey::services::LevelLoader;
 
-LevelLoader::LevelLoader(std::string baseAssetPath) {
-    this->baseAssetPath = baseAssetPath;
-}
+LevelLoader::LevelLoader(const std::string &baseAssetPath) : baseAssetPath(baseAssetPath) {}
 
-LevelLoader::Level LevelLoader::load(std::string path) const {
-    auto fullPath = baseAssetPath + path;
+LevelLoader::Level LevelLoader::load(const std::string &path) const {
+    const auto fullPath = baseAssetPath + path;
     std::ifstream f(fullPath);
     json data = json::parse(f);
     return data.template get<Level>();
 }
-
-

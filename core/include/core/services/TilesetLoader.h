@@ -49,9 +49,9 @@ namespace roguey::services {
 
         explicit TilesetLoader(std::string baseAssetPath);
 
-        Tileset load(std::string path) const;
+        [[nodiscard]] Tileset load(std::string path) const;
 
     private:
-        std::string baseAssetPath;
+        const std::string baseAssetPath;
     };
 }

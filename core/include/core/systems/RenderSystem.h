@@ -10,10 +10,10 @@ namespace roguey {
 
         ~RenderSystem();
 
-        void render();
+        void render() const;
 
     private:
-        services::TextureLoader *assetLoader;
+        services::TextureLoader *textureLoader;
         SDL_Renderer *renderer;
     };
 }

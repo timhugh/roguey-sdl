@@ -12,8 +12,8 @@ public:
     void endFrame();
 
 private:
-    int _frameDelay;
+    const int frameDelay;
 
-    Uint32 _frameStart = 0;
-    Uint32 _frameTime = 0;
+    Uint32 frameStart = 0;
+    Uint32 frameTime = 0;
 };

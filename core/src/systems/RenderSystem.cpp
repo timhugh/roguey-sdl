@@ -8,22 +8,18 @@ namespace roguey {
 
     RenderSystem::RenderSystem(WindowSystem *windowSystem) {
         renderer = windowSystem->createRenderer();
-        assetLoader = new services::TextureLoader(renderer, "../assets/");
-
-        // TODO: temp
-        texture = assetLoader->load("graphics/sprites.png");
+        textureLoader = new services::TextureLoader(renderer, "../assets/");
     }
 
     RenderSystem::~RenderSystem() {
-        delete assetLoader;
-        SDL_DestroyTexture(texture);
+        delete textureLoader;
         SDL_DestroyRenderer(renderer);
     }
 
-    void RenderSystem::render() {
+    void RenderSystem::render() const {
         SDL_RenderClear(renderer);
 
-        SDL_RenderCopy(renderer, texture, nullptr, nullptr);
+        // TODO: call other renderers
 
         SDL_RenderPresent(renderer);
     }

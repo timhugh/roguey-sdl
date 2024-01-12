@@ -1,15 +1,16 @@
 #pragma once
 
 #include <SDL.h>
+#include <string>
 
 namespace roguey {
     class WindowSystem {
     public:
-        WindowSystem(int screenWidth, int screenHeight, const char *title);
+        WindowSystem(int screenWidth, int screenHeight, const std::string &title);
 
         ~WindowSystem();
 
-        SDL_Renderer *createRenderer();
+        [[nodiscard]] SDL_Renderer *createRenderer() const;
 
     private:
         SDL_Window *window;
