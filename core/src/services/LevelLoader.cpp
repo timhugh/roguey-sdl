@@ -3,12 +3,13 @@
 #include <fstream>
 
 using json = nlohmann::json;
+using roguey::services::LevelLoader;
 
-roguey::services::LevelLoader::LevelLoader(std::string baseAssetPath) {
+LevelLoader::LevelLoader(std::string baseAssetPath) {
     this->baseAssetPath = baseAssetPath;
 }
 
-roguey::services::Level roguey::services::LevelLoader::load(std::string path) const {
+LevelLoader::Level LevelLoader::load(std::string path) const {
     auto fullPath = baseAssetPath + path;
     std::ifstream f(fullPath);
     json data = json::parse(f);

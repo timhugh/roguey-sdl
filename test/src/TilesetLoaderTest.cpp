@@ -2,12 +2,12 @@
 #include <catch2/matchers/catch_matchers_all.hpp>
 #include "core/services/TilesetLoader.h"
 
-using namespace roguey::services;
+using roguey::services::TilesetLoader;
 
 TEST_CASE("test loads tileset") {
-    auto loader = roguey::services::TilesetLoader("assets/");
+    auto loader = TilesetLoader("assets/");
 
-    std::vector<Tile> expectedTiles = {
+    std::vector<TilesetLoader::Tile> expectedTiles = {
             {1,  1, 0,  true,  "ground.blank"},
             {8,  3, 22, true,  "chair"},
             {14, 0, 29, false, "character.woman.2"},

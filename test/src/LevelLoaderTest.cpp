@@ -2,10 +2,10 @@
 #include <catch2/matchers/catch_matchers_all.hpp>
 #include "core/services/LevelLoader.h"
 
-using namespace roguey::services;
+using roguey::services::LevelLoader;
 
 TEST_CASE("test loads level") {
-    auto loader = roguey::services::LevelLoader("assets/");
+    auto loader = LevelLoader("assets/");
 
     auto actualLevel = loader.load("test-level.json");
     REQUIRE(actualLevel.name == "test level");
@@ -17,7 +17,7 @@ TEST_CASE("test loads level") {
             {4, 3}
     }));
 
-    REQUIRE_THAT(actualLevel.entities, Catch::Matchers::UnorderedEquals(std::vector<Entity>{
+    REQUIRE_THAT(actualLevel.entities, Catch::Matchers::UnorderedEquals(std::vector<LevelLoader::Entity>{
             {"player", "character.man.1", 0, 0},
             {"door",   "door.h.closed",   0, 1},
             {"chest",  "chest",           1, 0}

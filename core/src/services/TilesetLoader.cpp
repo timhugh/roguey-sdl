@@ -5,31 +5,33 @@
 #include <iostream>
 
 using json = nlohmann::json;
+using roguey::services::TilesetLoader;
 
-roguey::services::TilesetLoader::TilesetLoader(std::string baseAssetPath) {
+TilesetLoader::TilesetLoader(std::string baseAssetPath) {
     this->baseAssetPath = baseAssetPath;
 }
 
-roguey::services::Tileset roguey::services::TilesetLoader::load(std::string path) const {
+TilesetLoader::Tileset roguey::services::TilesetLoader::load(std::string path) const {
     auto fullPath = baseAssetPath + path;
     std::ifstream f(fullPath);
     json data = json::parse(f);
     return data.template get<Tileset>();
 }
 
-std::string roguey::services::Tileset::getSpritesheet() const {
+std::string TilesetLoader::Tileset::getSpritesheet() const {
     return spritesheet;
 }
 
-int roguey::services::Tileset::getTilesize() const {
+int TilesetLoader::Tileset::getTilesize() const {
     return tilesize;
 }
 
-std::vector<roguey::services::Tile> roguey::services::Tileset::getTiles() const {
+std::vector<TilesetLoader::Tile> TilesetLoader::Tileset::getTiles() const {
     return tiles;
 }
 
-std::optional<roguey::services::Tile> roguey::services::Tileset::getTile(const int id) const {
+std::optional<TilesetLoader::Tile>
+roguey::services::TilesetLoader::Tileset::getTile(const int id) const {
     for (const auto &tile: tiles) {
         if (tile.id == id) {
             return tile;
@@ -38,7 +40,8 @@ std::optional<roguey::services::Tile> roguey::services::Tileset::getTile(const i
     return std::nullopt;
 }
 
-std::optional<roguey::services::Tile> roguey::services::Tileset::getTile(const std::string &name) const {
+std::optional<TilesetLoader::Tile>
+TilesetLoader::Tileset::getTile(const std::string &name) const {
     for (const auto &tile: tiles) {
         if (tile.name == name) {
             return tile;
