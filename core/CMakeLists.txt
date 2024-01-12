@@ -20,6 +20,11 @@ add_library(core
         src/services/TilesetLoader.cpp
         include/core/systems/LevelRenderSystem.h
         src/systems/LevelRenderSystem.cpp
+        include/core/Level.h
+        include/core/Drawable.h
+        src/Drawable.cpp
+        src/Level.cpp
+        include/core/Color.h
 )
 target_include_directories(core PUBLIC include)
 

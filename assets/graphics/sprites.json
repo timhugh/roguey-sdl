@@ -1,210 +1,251 @@
 {
   "spritesheet": "graphics/sprites.png",
   "tilesize": 8,
-  "tiles": {
-    "wall.thin.nw": {
+  "baseColorHex": "222323",
+  "tiles": [
+    {
+      "name": "wall.thin.nw",
       "x": 0,
       "y": 0,
       "id": 10
     },
-    "wall.thin.horizontal.1": {
+    {
+      "name": "wall.thin.horizontal.1",
       "x": 1,
       "y": 0,
       "id": 7
     },
-    "wall.thin.horizontal.2": {
+    {
+      "name": "wall.thin.horizontal.2",
       "x": 2,
       "y": 4,
       "id": 31
     },
-    "wall.thin.horizontal.3": {
+    {
+      "name": "wall.thin.horizontal.3",
       "x": 3,
       "y": 4,
       "id": 32
     },
-    "wall.thin.sw.2": {
+    {
+      "name": "wall.thin.sw.2",
       "x": 2,
       "y": 5,
       "id": 33
     },
-    "wall.thin.se.2": {
+    {
+      "name": "wall.thin.se.2",
       "x": 3,
       "y": 5,
       "id": 34
     },
-    "wall.thin.ne": {
+    {
+      "name": "wall.thin.ne",
       "x": 3,
       "y": 0,
       "id": 11
     },
-    "wall.thin.w": {
+    {
+      "name": "wall.thin.w",
       "x": 0,
       "y": 1,
       "id": 8
     },
-    "wall.thin.e": {
+    {
+      "name": "wall.thin.e",
       "x": 3,
       "y": 1,
       "id": 9
     },
-    "wall.thin.sw.1": {
+    {
+      "name": "wall.thin.sw.1",
       "x": 0,
       "y": 2,
       "id": 12
     },
-    "wall.thin.se.1": {
+    {
+      "name": "wall.thin.se.1",
       "x": 3,
       "y": 2,
       "id": 13
     },
-    "wall.thin.arch.1": {
+    {
+      "name": "wall.thin.arch.1",
       "x": 2,
       "y": 0,
       "id": 14
     },
-    "wall.thin.arch.2": {
+    {
+      "name": "wall.thin.arch.2",
       "x": 2,
       "y": 2,
       "id": 15
     },
-    "wall.thin.window": {
+    {
+      "name": "wall.thin.window",
       "x": 1,
       "y": 2,
       "id": 30
     },
-    "ground.blank": {
+    {
+      "name": "ground.blank",
       "x": 1,
       "y": 1,
       "id": 0,
       "walkable": true
     },
-    "ground.grass": {
+    {
+      "name": "ground.grass",
       "x": 5,
       "y": 4,
       "id": 1,
       "walkable": true
     },
-    "ground.rocks": {
+    {
+      "name": "ground.rocks",
       "x": 4,
       "y": 4,
       "id": 2,
       "walkable": true
     },
-    "tree.1": {
+    {
+      "name": "tree.1",
       "x": 4,
       "y": 5,
       "id": 3
     },
-    "tree.2": {
+    {
+      "name": "tree.2",
       "x": 5,
       "y": 5,
       "id": 4
     },
-    "tree.3": {
+    {
+      "name": "tree.3",
       "x": 7,
       "y": 5,
       "id": 5
     },
-    "trees": {
+    {
+      "name": "trees",
       "x": 6,
       "y": 5,
       "id": 6
     },
-    "door.h.closed": {
+    {
+      "name": "door.h.closed",
       "x": 4,
       "y": 2,
       "id": 16
     },
-    "door.h.open": {
+    {
+      "name": "door.h.open",
       "x": 5,
       "y": 2,
       "id": 17
     },
-    "stairs.down": {
+    {
+      "name": "stairs.down",
       "x": 4,
       "y": 3,
       "id": 18
     },
-    "stairs.up": {
+    {
+      "name": "stairs.up",
       "x": 5,
       "y": 3,
       "id": 19
     },
-    "table.small": {
+    {
+      "name": "table.small",
       "x": 6,
       "y": 3,
       "id": 20
     },
-    "table.large": {
+    {
+      "name": "table.large",
       "x": 7,
       "y": 3,
       "id": 21
     },
-    "chair": {
+    {
+      "name": "chair",
       "x": 8,
       "y": 3,
       "id": 22,
       "walkable": true
     },
-    "chest": {
+    {
+      "name": "chest",
       "x": 9,
       "y": 3,
       "id": 23
     },
-    "pot.large": {
+    {
+      "name": "pot.large",
       "x": 8,
       "y": 2,
       "id": 37
     },
-    "pot.small": {
+    {
+      "name": "pot.small",
       "x": 9,
       "y": 2,
       "id": 38
     },
-    "bed": {
+    {
+      "name": "bed",
       "x": 14,
       "y": 3,
       "id": 39
     },
-    "character.man.1": {
+    {
+      "name": "character.man.1",
       "x": 4,
       "y": 0,
       "id": 24
     },
-    "character.man.2": {
+    {
+      "name": "character.man.2",
       "x": 5,
       "y": 0,
       "id": 25
     },
-    "character.man.3": {
+    {
+      "name": "character.man.3",
       "x": 6,
       "y": 0,
       "id": 26
     },
-    "character.man.4": {
+    {
+      "name": "character.man.4",
       "x": 7,
       "y": 0,
       "id": 27
     },
-    "character.woman.1": {
+    {
+      "name": "character.woman.1",
       "x": 8,
       "y": 0,
       "id": 28
     },
-    "character.woman.2": {
+    {
+      "name": "character.woman.2",
       "x": 14,
       "y": 0,
       "id": 29
     },
-    "flag.1": {
+    {
+      "name": "flag.1",
       "x": 15,
       "y": 1,
       "id": 35
     },
-    "flag.2": {
+    {
+      "name": "flag.2",
       "x": 15,
       "y": 2,
       "id": 36
     }
-  }
+  ]
 }

@@ -7,7 +7,7 @@ using roguey::services::TilesetLoader;
 TEST_CASE("test loads tileset") {
     auto loader = TilesetLoader("assets/");
 
-    std::vector<TilesetLoader::Tile> expectedTiles = {
+    std::vector<TilesetLoader::TileData> expectedTiles = {
             {1,  1, 0,  true,  "ground.blank"},
             {8,  3, 22, true,  "chair"},
             {14, 0, 29, false, "character.woman.2"},
@@ -15,10 +15,11 @@ TEST_CASE("test loads tileset") {
     };
 
     auto actualTileset = loader.load("test-tileset.json");
-    REQUIRE(actualTileset->getSpritesheet() == "test-tileset.png");
-    REQUIRE(actualTileset->getTilesize() == 8);
+    REQUIRE(actualTileset->spritesheet == "test-tileset.png");
+    REQUIRE(actualTileset->tilesize == 8);
+    REQUIRE(actualTileset->baseColorHex == "#000000");
 
-    REQUIRE_THAT(actualTileset->getTiles(), Catch::Matchers::UnorderedEquals(expectedTiles));
+    REQUIRE_THAT(actualTileset->tiles, Catch::Matchers::UnorderedEquals(expectedTiles));
 
     auto expectedTile = expectedTiles.at(2);
     REQUIRE(actualTileset->getTile(expectedTile.id) == expectedTile);

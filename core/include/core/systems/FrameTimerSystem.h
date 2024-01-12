@@ -2,18 +2,20 @@
 
 #include <SDL_stdinc.h>
 
-class FrameTimerSystem {
+namespace roguey::systems {
+    class FrameTimerSystem {
 
-public:
-    explicit FrameTimerSystem(int fps);
+    public:
+        explicit FrameTimerSystem(int fps);
 
-    void startFrame();
+        void startFrame();
 
-    void endFrame();
+        void endFrame();
 
-private:
-    const int frameDelay;
+    private:
+        const int frameDelay;
 
-    Uint32 frameStart = 0;
-    Uint32 frameTime = 0;
-};
+        Uint32 frameStart = 0;
+        Uint32 frameTime = 0;
+    };
+}

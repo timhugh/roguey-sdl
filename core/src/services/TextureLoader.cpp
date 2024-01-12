@@ -1,5 +1,6 @@
 #include <SDL_image.h>
 #include "core/services/TextureLoader.h"
+#include <iostream>
 
 roguey::services::TextureLoader::TextureLoader(
         const std::shared_ptr<SDL_Renderer> renderer,
@@ -22,8 +23,10 @@ std::shared_ptr<SDL_Texture> roguey::services::TextureLoader::load(const std::st
     std::shared_ptr<SDL_Texture> texture;
 
     if (textureCache.contains(path)) {
+        std::cout << "Using cached texture: " << path << std::endl;
         texture = textureCache[path];
     } else {
+        std::cout << "Loading texture from disk: " << path << std::endl;
         texture = loadFromFile(path);
         textureCache[path] = texture;
     }

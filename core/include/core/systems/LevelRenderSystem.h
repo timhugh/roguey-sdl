@@ -2,11 +2,12 @@
 
 #include <SDL.h>
 #include <memory>
+#include "core/Level.h"
 
-namespace roguey::services {
+namespace roguey::systems {
     class LevelRenderSystem {
     public:
-        explicit LevelRenderSystem(const std::shared_ptr<SDL_Renderer> &renderer);
+        LevelRenderSystem(const std::shared_ptr<SDL_Renderer> &renderer, const std::shared_ptr<Level> &level);
 
         ~LevelRenderSystem();
 
@@ -14,5 +15,9 @@ namespace roguey::services {
 
     private:
         const std::shared_ptr<SDL_Renderer> renderer;
+        const std::shared_ptr<Level> level;
+        const int tilesize = 32;
+        const int cameraX = 0;
+        const int cameraY = 0;
     };
 }

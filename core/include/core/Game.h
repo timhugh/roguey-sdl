@@ -16,10 +16,10 @@ namespace roguey {
         void run();
 
     private:
-        FrameTimerSystem *frameTimer;
-        WindowSystem *window;
-        RenderSystem *renderer;
-        InputSystem *input;
+        systems::FrameTimerSystem *frameTimerSystem;
+        systems::WindowSystem *windowSystem;
+        systems::RenderSystem *renderSystem;
+        systems::InputSystem *inputSystem;
     };
 
 }

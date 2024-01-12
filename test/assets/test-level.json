@@ -2,7 +2,6 @@
   "name": "test level",
   "width": 2,
   "height": 2,
-  "baseColorHex": "#000000",
   "baseTiles": [
     [
       0,

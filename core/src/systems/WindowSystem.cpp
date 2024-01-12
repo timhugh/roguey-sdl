@@ -1,7 +1,7 @@
 #include "core/systems/WindowSystem.h"
 #include <iostream>
 
-roguey::WindowSystem::WindowSystem(const int screenWidth, const int screenHeight, const std::string &title) {
+roguey::systems::WindowSystem::WindowSystem(const int screenWidth, const int screenHeight, const std::string &title) {
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         std::cout << "Failed to init SDL: " << SDL_GetError() << std::endl;
         return;
@@ -17,14 +17,14 @@ roguey::WindowSystem::WindowSystem(const int screenWidth, const int screenHeight
     }
 }
 
-std::shared_ptr<SDL_Renderer> roguey::WindowSystem::createRenderer() const {
+std::shared_ptr<SDL_Renderer> roguey::systems::WindowSystem::createRenderer() const {
     return {
             SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED),
             SDL_DestroyRenderer
     };
 }
 
-roguey::WindowSystem::~WindowSystem() {
+roguey::systems::WindowSystem::~WindowSystem() {
     SDL_DestroyWindow(window);
     SDL_Quit();
 }

@@ -1,6 +1,7 @@
 {
   "spritesheet": "test-tileset.png",
   "tilesize": 8,
+  "baseColorHex": "#000000",
   "tiles": [
     {
       "name": "ground.blank",

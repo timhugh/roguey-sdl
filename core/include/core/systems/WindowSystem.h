@@ -4,7 +4,7 @@
 #include <string>
 #include <memory>
 
-namespace roguey {
+namespace roguey::systems {
     class WindowSystem {
     public:
         WindowSystem(int screenWidth, int screenHeight, const std::string &title);

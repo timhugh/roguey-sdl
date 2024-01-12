@@ -1,7 +1,7 @@
 #include <SDL.h>
 #include "core/systems/InputSystem.h"
 
-void InputSystem::update() {
+void roguey::systems::InputSystem::update() {
     SDL_Event event;
     while (SDL_PollEvent(&event) != 0) {
         switch (event.type) {
@@ -12,6 +12,6 @@ void InputSystem::update() {
     }
 }
 
-bool InputSystem::shouldQuit() const {
+bool roguey::systems::InputSystem::shouldQuit() const {
     return quit;
 }

@@ -1,12 +1,14 @@
 #pragma once
 
-class InputSystem {
+namespace roguey::systems {
+    class InputSystem {
 
-public:
-    void update();
+    public:
+        void update();
 
-    [[nodiscard]] bool shouldQuit() const;
+        [[nodiscard]] bool shouldQuit() const;
 
-private:
-    bool quit = false;
-};
+    private:
+        bool quit = false;
+    };
+}
