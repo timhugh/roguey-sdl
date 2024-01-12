@@ -1,0 +1,44 @@
+{
+  "name": "test level",
+  "width": 2,
+  "height": 2,
+  "baseColorHex": "#000000",
+  "baseTiles": [
+    [
+      0,
+      2
+    ],
+    [
+      4,
+      3
+    ]
+  ],
+  "entities": [
+    {
+      "type": "player",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "type": "door",
+      "sprite": "door.h.closed",
+      "x": 0,
+      "y": 1,
+      "door": {
+        "state": "closed",
+        "closedSprite": "door.h.closed",
+        "openSprite": "door.h.open"
+      }
+    },
+    {
+      "type": "chest",
+      "sprite": "chest",
+      "x": 1,
+      "y": 0,
+      "chest": {
+        "state": "closed",
+        "contains": []
+      }
+    }
+  ]
+}

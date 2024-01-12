@@ -24,7 +24,7 @@ namespace roguey::services {
         NLOHMANN_DEFINE_TYPE_INTRUSIVE_WITH_DEFAULT(Tile, x, y, id, walkable, name)
     };
 
-    struct Tileset {
+    class Tileset {
         std::string spritesheet;
         int tilesize;
         std::vector<Tile> tiles;
@@ -34,6 +34,17 @@ namespace roguey::services {
                    tilesize == other.tilesize &&
                    tiles == other.tiles;
         }
+
+    public:
+        std::string getSpritesheet() const;
+
+        int getTilesize() const;
+
+        std::vector<Tile> getTiles() const;
+
+        std::optional<Tile> getTile(const int id) const;
+
+        std::optional<Tile> getTile(const std::string &name) const;
 
         NLOHMANN_DEFINE_TYPE_INTRUSIVE(Tileset, spritesheet, tilesize, tiles)
     };
