@@ -29,12 +29,6 @@ namespace roguey::services {
         int tilesize;
         std::vector<Tile> tiles;
 
-        bool operator==(const Tileset &other) const {
-            return spritesheet == other.spritesheet &&
-                   tilesize == other.tilesize &&
-                   tiles == other.tiles;
-        }
-
     public:
         std::string getSpritesheet() const;
 
@@ -53,8 +47,7 @@ namespace roguey::services {
     public:
         explicit TilesetLoader(std::string baseAssetPath);
 
-        Tileset
-        load(std::string path);
+        Tileset load(std::string path) const;
 
     private:
         std::string baseAssetPath;

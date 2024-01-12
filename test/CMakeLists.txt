@@ -4,6 +4,7 @@ project(roguey)
 add_executable(test
         src/TilesetLoaderTest.cpp
         src/Test.cpp
+        src/LevelLoaderTest.cpp
 )
 target_compile_features(test PRIVATE cxx_std_23)
 

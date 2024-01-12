@@ -1,7 +1,6 @@
 #include <catch2/catch_all.hpp>
 #include <catch2/matchers/catch_matchers_all.hpp>
 #include "core/services/TilesetLoader.h"
-#include <iostream>
 
 using namespace roguey::services;
 
