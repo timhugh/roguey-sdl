@@ -10,13 +10,16 @@ namespace roguey {
     class Game {
     public:
         Game();
+
         ~Game();
+
         void run();
+
     private:
-        FrameTimerSystem* frameTimer;
-        WindowSystem* window;
-        RenderSystem* renderer;
-        InputSystem* input;
+        FrameTimerSystem *frameTimer;
+        WindowSystem *window;
+        RenderSystem *renderer;
+        InputSystem *input;
     };
 
 }

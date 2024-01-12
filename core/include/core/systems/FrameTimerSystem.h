@@ -6,7 +6,9 @@ class FrameTimerSystem {
 
 public:
     explicit FrameTimerSystem(int fps);
+
     void startFrame();
+
     void endFrame();
 
 private:

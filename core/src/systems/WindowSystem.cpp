@@ -8,8 +8,8 @@ roguey::WindowSystem::WindowSystem(int screenWidth, int screenHeight, const char
     }
 
     window = SDL_CreateWindow("Hello World",
-                                          SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-                                          640, 480, SDL_WINDOW_RESIZABLE);
+                              SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+                              640, 480, SDL_WINDOW_RESIZABLE);
 
     if (window == nullptr) {
         std::cout << "Failed to create SDL window: " << SDL_GetError() << std::endl;

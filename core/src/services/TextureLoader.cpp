@@ -1,7 +1,7 @@
 #include <SDL_image.h>
-#include "core/services/AssetLoader.h"
+#include "core/services/TextureLoader.h"
 
-roguey::services::AssetLoader::AssetLoader(SDL_Renderer *renderer, std::string baseAssetPath) {
+roguey::services::TextureLoader::TextureLoader(SDL_Renderer *renderer, std::string baseAssetPath) {
     this->renderer = renderer;
     this->baseAssetPath = baseAssetPath;
 
@@ -13,7 +13,7 @@ roguey::services::AssetLoader::AssetLoader(SDL_Renderer *renderer, std::string b
     }
 }
 
-roguey::services::AssetLoader::~AssetLoader() {
+roguey::services::TextureLoader::~TextureLoader() {
     for (const auto &item: textureCache) {
         SDL_DestroyTexture(item.second);
     }
@@ -21,20 +21,20 @@ roguey::services::AssetLoader::~AssetLoader() {
     IMG_Quit();
 }
 
-SDL_Texture *roguey::services::AssetLoader::loadTexture(std::string path) {
-    SDL_Texture* texture;
+SDL_Texture *roguey::services::TextureLoader::load(std::string path) {
+    SDL_Texture *texture;
 
     if (textureCache.contains(path)) {
         texture = textureCache[path];
     } else {
-        texture = loadTextureFromFile(path);
+        texture = loadFromFile(path);
         textureCache[path] = texture;
     }
 
     return texture;
 }
 
-SDL_Texture *roguey::services::AssetLoader::loadTextureFromFile(std::string path) {
+SDL_Texture *roguey::services::TextureLoader::loadFromFile(std::string path) {
     SDL_Texture *texture = IMG_LoadTexture(renderer, baseAssetPath.append(path).c_str());
     if (texture == nullptr) {
         throw std::runtime_error(

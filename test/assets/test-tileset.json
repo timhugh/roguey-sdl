@@ -1,0 +1,32 @@
+{
+  "spritesheet": "test-tileset.png",
+  "tilesize": 8,
+  "tiles": [
+    {
+      "name": "ground.blank",
+      "id": 0,
+      "x": 1,
+      "y": 1,
+      "walkable": true
+    },
+    {
+      "name": "chair",
+      "id": 22,
+      "x": 8,
+      "y": 3,
+      "walkable": true
+    },
+    {
+      "name": "character.woman.2",
+      "id": 29,
+      "x": 14,
+      "y": 0
+    },
+    {
+      "name": "flag.1",
+      "id": 35,
+      "x": 15,
+      "y": 1
+    }
+  ]
+}

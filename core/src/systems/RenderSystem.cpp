@@ -4,14 +4,14 @@
 #include <string>
 
 namespace roguey {
-    SDL_Texture* texture;
+    SDL_Texture *texture;
 
     RenderSystem::RenderSystem(WindowSystem *windowSystem) {
         renderer = windowSystem->createRenderer();
-        assetLoader = new services::AssetLoader(renderer, "../assets/");
+        assetLoader = new services::TextureLoader(renderer, "../assets/");
 
         // TODO: temp
-        texture = assetLoader->loadTexture("graphics/sprites.png");
+        texture = assetLoader->load("graphics/sprites.png");
     }
 
     RenderSystem::~RenderSystem() {
